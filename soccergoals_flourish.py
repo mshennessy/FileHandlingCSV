@@ -1,3 +1,4 @@
+# G Hennessy 2024
 # This file takes a soccer goals dataset which has a row for every match player goal
 # And changes it to a dataset that looks like this
 # Player URL                  1916  1901 1902 ... 2024
@@ -44,6 +45,8 @@ def decadeFinder(yearIn):
     
 # For testing purposes only - so I can test a smaller data-set more quickly
 endYear=int(input("Year to finish?"))
+# If the enter 2024, we need to set up a for year in range(2025)
+endYear +=1
 
 # read csv file of countries and flag URLS into two lists
 # then zip these into a single dictionary object
@@ -115,7 +118,8 @@ for year in years:
     if firstColumn:
         pass
     else:
-        # Copy the value from the previous year so we can add to it if necessary
+        # Copy the value from the previous year
+        # so we can add to it if necessary
         df2[year] = df2[year-1]
     
     # Read the block of data for current year from raw data
